@@ -26,7 +26,6 @@ struct RootView: View {
     ) {
     self.feedURL = feedURL
         self.autoLoad = autoLoad
-        // Allow previews to inject a starting state
         if let initialState { self._state = State(initialValue: initialState) }
     }
 

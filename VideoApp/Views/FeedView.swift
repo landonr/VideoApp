@@ -11,7 +11,6 @@ import SwiftUI
 
 struct FeedView: View {
     let data: FeedElement
-    // Track the currently visible item's ID (updated by ScrollView paging)
     @State private var currentID: UUID?
     @StateObject private var playerManager = VideoPlayerManager()
 

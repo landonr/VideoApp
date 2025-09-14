@@ -17,7 +17,6 @@ struct VideoPostView: View {
     var body: some View {
         ZStack {
             VideoPlaybackView(player: player)
-            // Bottom gradient to improve description readability
             LinearGradient(colors: [.clear, .black.opacity(0.8)],
                            startPoint: .top,
                            endPoint: .bottom)
