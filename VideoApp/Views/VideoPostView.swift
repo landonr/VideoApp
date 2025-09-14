@@ -17,18 +17,21 @@ struct VideoPostView: View {
     var body: some View {
         ZStack {
             VideoPlaybackView(player: player)
-            VStack(alignment: .leading) {
+            // Bottom gradient to improve description readability
+            LinearGradient(colors: [.clear, .black.opacity(0.8)],
+                           startPoint: .top,
+                           endPoint: .bottom)
+            .frame(height: 160)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .allowsHitTesting(false)
+            VStack(alignment: .leading) { // desc
                 Spacer()
-                Text("Username")
+                Text("Video #\(index + 1)")
                     .font(.title)
-                HStack {
-                    Text("Video #\(index + 1)")
-                    Spacer()
-                    Text("Today")
-                }
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding()
-            .foregroundStyle(.white)
+            .padding(32)
         }
     }
 }

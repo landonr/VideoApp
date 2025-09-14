@@ -22,7 +22,7 @@ final class VideoPlayerManager: ObservableObject {
     private var itemEndObservers: [UUID: Any] = [:]
 
     /// Radius around the current index to prefetch.
-    var prefetchRadius: Int = 1
+    var prefetchRadius: Int = 2
 
     /// Retrieve (or create) a dedicated player for the given video.
     func player(for video: VideoElement) -> AVPlayer {
@@ -33,7 +33,7 @@ final class VideoPlayerManager: ObservableObject {
 
         if let url = video.url {
             let item = AVPlayerItem(url: url)
-            item.preferredForwardBufferDuration = 10  // seconds to buffer ahead when possible
+            item.preferredForwardBufferDuration = 1  // seconds to buffer ahead when possible
             player.replaceCurrentItem(with: item)
             // Loop at end to avoid a black frame when revisiting
             player.actionAtItemEnd = .none
