@@ -18,7 +18,7 @@ struct FeedElement {
             title: "one",
             url: URL(
                 string:
-                    "https://d142uv38695ylm.cloudfront.net/videos/promo/allesneu.land-promo-trailer-360p.m3u8"
+                    "https://naver.github.io/egjs-view360//pano/equirect/m3u8/equi.m3u8"
             )
         ),
         .init(

@@ -26,5 +26,9 @@ public struct VideoPlaybackView: UIViewControllerRepresentable {
         return vc
     }
 
-    public func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {}
+    public func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
+        if uiViewController.player !== player {
+            uiViewController.player = player
+        }
+    }
 }
