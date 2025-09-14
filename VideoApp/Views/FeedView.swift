@@ -20,13 +20,14 @@ struct FeedView: View {
             GeometryReader { geo in
                 ScrollView(.vertical) {
                     LazyVStack(spacing: geo.safeAreaInsets.bottom) {
-                        ForEach(data.videos) { video in
+                        ForEach(Array(data.videos.enumerated()), id: \.element.id) { index, video in
                             VideoPostView(
+                                index: index,
                                 data: video,
                                 player: playerManager.player(for: video)
                             )
-                                .frame(height: geo.size.height)
-                                .id(video.id)
+                            .frame(height: geo.size.height)
+                            .id(video.id)
                         }
                     }
                     .scrollTargetLayout()

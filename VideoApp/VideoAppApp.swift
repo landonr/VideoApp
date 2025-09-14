@@ -13,7 +13,7 @@ import SwiftUI
 struct VideoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            FeedView(data: .default)
+            RootView()
         }
     }
 }

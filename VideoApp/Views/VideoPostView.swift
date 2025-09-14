@@ -10,6 +10,7 @@ import AVKit
 import SwiftUI
 
 struct VideoPostView: View {
+    let index: Int
     let data: VideoElement
     let player: AVPlayer
 
@@ -21,7 +22,7 @@ struct VideoPostView: View {
                 Text("Username")
                     .font(.title)
                 HStack {
-                    Text(data.title)
+                    Text("Video #\(index + 1)")
                     Spacer()
                     Text("Today")
                 }
@@ -33,5 +34,5 @@ struct VideoPostView: View {
 }
 
 #Preview {
-    VideoPostView(data: .init(title: "Test Video", url: .init(string: "")), player: AVPlayer())
+    VideoPostView(index: 0, data: .init(url: .init(string: "")), player: AVPlayer())
 }

@@ -10,6 +10,5 @@ import SwiftUI
 
 struct VideoElement: Identifiable {
     let id = UUID()
-    let title: String
     let url: URL?
 }
